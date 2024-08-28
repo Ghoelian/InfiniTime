@@ -37,14 +37,6 @@ namespace Pinetime {
       enum class PTSGaugeStyle : uint8_t { Full, Half, Numeric };
       enum class PTSWeather : uint8_t { On, Off };
 
-      struct PineTimeStyle {
-        Colors ColorTime = Colors::Teal;
-        Colors ColorBar = Colors::Teal;
-        Colors ColorBG = Colors::Black;
-        PTSGaugeStyle gaugeStyle = PTSGaugeStyle::Full;
-        PTSWeather weatherEnable = PTSWeather::Off;
-      };
-
       struct WatchFaceInfineat {
         bool showSideCover = true;
         int colorIndex = 0;
@@ -82,36 +74,6 @@ namespace Pinetime {
         return settings.chimesOption;
       };
 
-      void SetPTSColorTime(Colors colorTime) {
-        if (colorTime != settings.PTS.ColorTime)
-          settingsChanged = true;
-        settings.PTS.ColorTime = colorTime;
-      };
-
-      Colors GetPTSColorTime() const {
-        return settings.PTS.ColorTime;
-      };
-
-      void SetPTSColorBar(Colors colorBar) {
-        if (colorBar != settings.PTS.ColorBar)
-          settingsChanged = true;
-        settings.PTS.ColorBar = colorBar;
-      };
-
-      Colors GetPTSColorBar() const {
-        return settings.PTS.ColorBar;
-      };
-
-      void SetPTSColorBG(Colors colorBG) {
-        if (colorBG != settings.PTS.ColorBG)
-          settingsChanged = true;
-        settings.PTS.ColorBG = colorBG;
-      };
-
-      Colors GetPTSColorBG() const {
-        return settings.PTS.ColorBG;
-      };
-
       void SetInfineatShowSideCover(bool show) {
         if (show != settings.watchFaceInfineat.showSideCover) {
           settings.watchFaceInfineat.showSideCover = show;
@@ -132,26 +94,6 @@ namespace Pinetime {
 
       int GetInfineatColorIndex() const {
         return settings.watchFaceInfineat.colorIndex;
-      };
-
-      void SetPTSGaugeStyle(PTSGaugeStyle gaugeStyle) {
-        if (gaugeStyle != settings.PTS.gaugeStyle)
-          settingsChanged = true;
-        settings.PTS.gaugeStyle = gaugeStyle;
-      };
-
-      PTSGaugeStyle GetPTSGaugeStyle() const {
-        return settings.PTS.gaugeStyle;
-      };
-
-      void SetPTSWeather(PTSWeather weatherEnable) {
-        if (weatherEnable != settings.PTS.weatherEnable)
-          settingsChanged = true;
-        settings.PTS.weatherEnable = weatherEnable;
-      };
-
-      PTSWeather GetPTSWeather() const {
-        return settings.PTS.weatherEnable;
       };
 
       void SetAppMenu(uint8_t menu) {
@@ -299,8 +241,6 @@ namespace Pinetime {
 
         Pinetime::Applications::WatchFace watchFace = Pinetime::Applications::WatchFace::Digital;
         ChimesOption chimesOption = ChimesOption::None;
-
-        PineTimeStyle PTS;
 
         WatchFaceInfineat watchFaceInfineat;
 
