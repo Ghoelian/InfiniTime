@@ -634,6 +634,7 @@ void DisplayApp::LoadScreen(Apps app, DisplayApp::FullRefreshDirections directio
       break;
     case Apps::SettingOTA:
       currentScreen = std::make_unique<Screens::SettingOTA>(this, settingsController);
+      break;
     case Apps::SettingNotifVibration:
       currentScreen = std::make_unique<Screens::SettingNotifVibration>(settingsController, motorController);
       break;
