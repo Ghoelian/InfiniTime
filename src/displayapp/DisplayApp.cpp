@@ -381,7 +381,6 @@ void DisplayApp::Refresh() {
         } else {
           LoadNewScreen(Apps::Timer, DisplayApp::FullRefreshDirections::Up);
         }
-        motorController.RunForDuration(static_cast<uint8_t>(settingsController.GetNotifVibration()));
         break;
       case Messages::AlarmTriggered:
         if (currentApp == Apps::Alarm) {
