@@ -429,8 +429,6 @@ void WatchFaceCasioStyleG7710::UpdateWeatherPosition() {
       lv_obj_align(weatherIcon, label_day_of_week, LV_ALIGN_CENTER, 0, -50);
       lv_label_set_align(label_temperature, LV_LABEL_ALIGN_CENTER);
       lv_obj_align(label_temperature, label_day_of_week, LV_ALIGN_CENTER, 0, -27);
-
-      lv_label_set_text_fmt(label_day_of_year, "%3d-%3d", dayOfYear, weekNumber);
       break;
     case Controllers::Settings::CasioWeatherSegment::DayOfWeek:
       lv_obj_set_hidden(label_day_of_week, true);
