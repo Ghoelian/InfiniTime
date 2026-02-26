@@ -126,7 +126,7 @@ WatchFaceCasioStyleG7710::WatchFaceCasioStyleG7710(Controllers::DateTime& dateTi
   lv_obj_set_hidden(label_temperature_segment, true);
   lv_obj_set_hidden(label_temperature, true);
 
-  if (settingsController.GetCasioWeather() == Pinetime::Controllers::Settings::PTSWeather::On) {
+  if (settingsController.GetCasioWeather() == Controllers::Settings::PTSWeather::On) {
     UpdateWeatherPosition();
   }
 
@@ -350,7 +350,7 @@ void WatchFaceCasioStyleG7710::Refresh() {
 
       lv_label_set_text_fmt(label_day_of_week, "%s", dateTimeController.DayOfWeekShortToString());
 
-      if (settingsController.GetCasioWeatherSegment() == Settings::CasioWeatherSegment::WeekNumber) {
+      if (settingsController.GetCasioWeatherSegment() == Controllers::Settings::CasioWeatherSegment::WeekNumber) {
         lv_label_set_text_fmt(label_day_of_year, "%3d-%3d", dayOfYear, weekNumber);
       } else {
         lv_label_set_text_fmt(label_day_of_year, "%3d-%3d", dayOfYear, daysTillEndOfYearNumber);
@@ -387,7 +387,7 @@ void WatchFaceCasioStyleG7710::Refresh() {
     lv_obj_realign(stepIcon);
   }
 
-  if (settingsController.GetCasioWeather() == Pinetime::Controllers::Settings::PTSWeather::On) {
+  if (settingsController.GetCasioWeather() == Controllers::Settings::PTSWeather::On) {
     DrawWeather();
   }
 
